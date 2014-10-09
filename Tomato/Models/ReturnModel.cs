@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Tomato.Models
@@ -11,5 +12,8 @@ namespace Tomato.Models
         public string Url { get; set; }
         public string Id { get; set; }
         public int VotesCount { get; set; }
+        public int CommentsCount { get; set; }
+        public DateTime Date { get; set; }
+        public string Gender { get; set; }
     }
 }

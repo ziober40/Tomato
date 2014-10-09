@@ -21,16 +21,13 @@
         var gridster;
         window.hotpage = 1;
         window.nextpage = 1;
-
-
         $.ajax({
             async: true,
             url: '@Url.Action("PullHot", "Home")',
             data: { tag: $('#tag').val(), page: window.hotpage },
             type: 'POST',
-            success: addBarChart
+            success: addCircleChart
         });
-
 
         $(function() {
             $('#addChart').click(function(e) {
@@ -43,7 +40,6 @@
                         r: 40,
                         fill: '#25B0B0'
                     });
-
             });
 
             $('#moreButton').click(function() {
