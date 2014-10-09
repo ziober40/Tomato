@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Tomato.Models.ReturnModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@Html.TextBox("tag", "", new { id = "tag" })
+<button id="nextPage">more tag</button>
+<button id="moreButton">more hot</button>
+<button id="clearGrid">clear grid</button>
+<button id="addChart">add chart</button>
+<div class="gridster">
+    <ul></ul>
+</div>
+
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/addtogrid.js"></script>
+    <script type="text/javascript" src="~/Scripts/gridster.js"></script>
+    <script type="text/javascript">
+        //all variables has to declared here
+        var gridster;
+        window.hotpage = 1;
+        window.nextpage = 1;
+
+
+        $.ajax({
+            async: true,
+            url: '@Url.Action("PullHot", "Home")',
+            data: { tag: $('#tag').val(), page: window.hotpage },
+            type: 'POST',
+            success: addBarChart
+        });
+
+
+        $(function() {
+            $('#addChart').click(function(e) {
+                gridster.add_widget.apply(gridster, ['<li id="wykres">takie tam<br /><svg></svg><footer>|||</footer></li>', 2, 1, 1, 1]);
+                var svg = d3.select("svg");
+                svg.append('circle')
+                    .attr({
+                        cx: 100,
+                        cy: 100,
+                        r: 40,
+                        fill: '#25B0B0'
+                    });
+
+            });
+
+            $('#moreButton').click(function() {
+                gridster.remove_all_widgets();
+                $.ajax({
+                    async: true,
+                    url: '@Url.Action("PullHot", "Home")',
+                    data: { tag: $('#tag').val(), page: window.hotpage },
+                    type: 'POST',
+                    success: addToGrid
+                });
+                window.hotpage = window.hotpage + 1;
+            });
+
+            $('#nextPage').click(function(e) {
+                gridster.remove_all_widgets();
+                window.nextpage = window.nextpage + 1;
+                $.ajax({
+                    async: true,
+                    url: '@Url.Action("PullTags", "Home")',
+                    data: { tag: $('#tag').val(), page: window.nextpage },
+                    type: 'POST',
+                    success: addToGrid
+                });
+            });
+
+            $('#clearGrid').click(function(e) {
+                gridster.remove_all_widgets();
+            });
+
+            $('#tag').on('keyup', function(e) {
+                gridster.remove_all_widgets();
+                if (e.keyCode == 13 && $(this).val().length > 0) {
+                    window.nextpage = 1;
+                    $.ajax({
+                        async: true,
+                        url: '@Url.Action("PullTags", "Home")',
+                        data: { tag: $(this).val() },
+                        type: 'POST',
+                        success: addToGrid
+                    });
+                }
+            });
+
+        });
+    </script>
+}
+
+
