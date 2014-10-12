@@ -71,9 +71,7 @@ input[type="checkbox"].input-validation-error {
 
 .gridster {
     margin: 0 auto;
-
     opacity: .8;
-
     -webkit-transition: opacity .6s;
     -moz-transition: opacity .6s;
     -o-transition: opacity .6s;
@@ -117,4 +115,15 @@ input[type="checkbox"].input-validation-error {
 
 code {
     white-space: normal;
+}
+
+.axis {
+  font-size: 10px;
+}
+.axis path {
+  fill: none;
+  stroke: #000000;
+}
+.axis .tick line {
+  stroke: #000;
 }

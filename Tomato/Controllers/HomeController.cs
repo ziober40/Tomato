@@ -66,7 +66,9 @@ namespace Tomato.Controllers
                             Body = item.body,
                             Id = item.id,
                             VotesCount = item.vote_count,
-                            CommentsCount = item.comment_count
+                            CommentsCount = item.comment_count,
+                            Date = item.date,
+                            Gender = item.author_sex
                         });
                 }
                 catch (Exception)
@@ -82,7 +84,9 @@ namespace Tomato.Controllers
                                 Url = item.url,
                                 Id = item.id,
                                 VotesCount = item.vote_count,
-                                CommentsCount = item.comment_count
+                                CommentsCount = item.comment_count,
+                                Date = item.date,
+                                Gender = item.author_sex
                             });
                     }
                 }
