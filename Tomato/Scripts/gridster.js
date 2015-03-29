@@ -2,7 +2,7 @@
 gridster = jQuery(".gridster > ul").gridster({
     max_cols: 6,
     widget_margins: [10, 10],
-    widget_base_dimensions: [400, 450],
+    widget_base_dimensions: [400, 700],
     draggable: {
         handle: 'footer'
     },

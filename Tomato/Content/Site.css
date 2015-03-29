@@ -103,7 +103,7 @@ input[type="checkbox"].input-validation-error {
 .posttext {
     overflow-y: auto;
     overflow-x: hidden;
-    height:420px;
+    height:1050px;
     width: 380px;
     text-align: left;
 }
