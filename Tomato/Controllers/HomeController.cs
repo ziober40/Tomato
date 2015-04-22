@@ -98,5 +98,10 @@ namespace Tomato.Controllers
         {
             return View();
         }
+
+        public ActionResult Graphs()
+        {
+            return View();
+        }
     }
 }
