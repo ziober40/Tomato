@@ -101,6 +101,7 @@ namespace Tomato.Controllers
 
         public ActionResult Graphs()
         {
+            
             return View();
         }
     }

@@ -163,7 +163,6 @@ C:\Users\Bartek\Source\Workspaces\Tomato\Tomato\bin\Microsoft.Owin.Security.Micr
 C:\Users\Bartek\Source\Workspaces\Tomato\Tomato\obj\Debug\Tomato.csprojResolveAssemblyReference.cache
 C:\Users\Bartek\Source\Workspaces\Tomato\Tomato\obj\Debug\Tomato.dll
 C:\Users\Bartek\Source\Workspaces\Tomato\Tomato\obj\Debug\Tomato.pdb
-C:\Users\bziobrowski\Documents\GitHub\Tomato\Tomato\bin\Tomato.dll.config
 C:\Users\bziobrowski\Documents\GitHub\Tomato\Tomato\bin\Tomato.dll
 C:\Users\bziobrowski\Documents\GitHub\Tomato\Tomato\bin\Tomato.pdb
 C:\Users\bziobrowski\Documents\GitHub\Tomato\Tomato\bin\Antlr3.Runtime.dll
